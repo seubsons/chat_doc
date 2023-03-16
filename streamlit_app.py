@@ -76,10 +76,10 @@ def get_text():
 
 user_input = get_text()
 
-# if b1:
-#   user_input = 'Show all doctors schedule'
-# elif b2:
-#   user_input = 'Get doctors list'
+if b1:
+  user_input = 'Show all doctors schedule'
+elif b2:
+  user_input = 'Get doctors list'
 # else:
 #   user_input = get_text()
 
@@ -87,8 +87,10 @@ user_input = get_text()
 
 if user_input:
   user_input_lower = user_input.lower()
-
-  output = generate_response(user_input_lower)
+  if user_input_lower == 'get doctors list':
+    output = names
+  else:
+    output = generate_response(user_input_lower)
   st.session_state.past.append(user_input)
   st.session_state.generated.append(output)
 
