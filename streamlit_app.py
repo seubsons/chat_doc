@@ -69,7 +69,7 @@ if user_input == "Show doctors schedule":
   output = sch_info+f'\nWho do you want to see?'
   st.session_state.past.append(user_input)
   st.session_state.generated.append(output)
-elif user_input:
+elif user_input+' in thai':
     output = generate_response(user_input)
     st.session_state.past.append(user_input)
     st.session_state.generated.append(output)
