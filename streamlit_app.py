@@ -66,7 +66,7 @@ def get_text():
 user_input = get_text()
 
 if user_input == "Show doctors schedule":
-  output = sch_info
+  output = sch_info+f'\nWho do you want to see?'
   st.session_state.past.append(user_input)
   st.session_state.generated.append(output)
 elif user_input:
