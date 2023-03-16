@@ -25,6 +25,8 @@ st.title('Welcome to Doctor Appointment Center')
 
 intro_message = "Please type a message here"
 
+
+
 ########################################
 with open('data.json', 'r') as f:
   schedule_data = json.load(f)
@@ -40,6 +42,7 @@ slen = 8
 # header = line1+line2+line3
 
 sch_info = f'\n'
+names = f'\n'
 for item in schedule_data:
   name = item['doctor']
   # department = 'General'
@@ -49,8 +52,11 @@ for item in schedule_data:
   #print(item)
   #sch_info += f'{item}\n'
   sch_info += f'{name.ljust(slen)}\t{date.ljust(slen)}\t{time}\n'
+  names += f'{name}'
 
 ########################################
+if st.button('Doctor list'):
+  print(names)
 
 if 'generated' not in st.session_state:
     st.session_state['generated'] = []
