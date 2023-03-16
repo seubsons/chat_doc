@@ -73,29 +73,37 @@ def get_text():
     input_text = st.text_input('','Show all doctors schedule', placeholder=intro_message, key='input')
     return input_text
 
-if b1:
-  user_input = 'Show all doctors schedule'
-elif b2:
-  user_input = 'Get doctors list'
-else:
-  user_input = get_text()
 
-user_input_lower = user_input.lower()
+user_input = get_text()
 
-if user_input_lower == 'show all doctors schedule':
-  output = sch_info+f'\nWho do you want to see?'
+# if b1:
+#   user_input = 'Show all doctors schedule'
+# elif b2:
+#   user_input = 'Get doctors list'
+# else:
+#   user_input = get_text()
+
+# user_input_lower = user_input.lower()
+
+if user_input:
+  output = generate_response(user_input)
   st.session_state.past.append(user_input)
   st.session_state.generated.append(output)
-elif user_input_lower == 'get doctors list':
-    output = names
-    st.session_state.past.append(user_input)
-    st.session_state.generated.append(output)
-elif user_input_lower:
-    output = generate_response(user_input)
-    st.session_state.past.append(user_input)
-    st.session_state.generated.append(output)
-else:
-  pass
+
+# if user_input_lower == 'show all doctors schedule':
+#   output = sch_info+f'\nWho do you want to see?'
+#   st.session_state.past.append(user_input)
+#   st.session_state.generated.append(output)
+# elif user_input_lower == 'get doctors list':
+#     output = names
+#     st.session_state.past.append(user_input)
+#     st.session_state.generated.append(output)
+# elif user_input_lower:
+#     output = generate_response(user_input)
+#     st.session_state.past.append(user_input)
+#     st.session_state.generated.append(output)
+# else:
+#   pass
 
 if st.session_state['generated']:
     for i in range(len(st.session_state['generated'])-1, -1, -1):
