@@ -70,7 +70,7 @@ if 'past' not in st.session_state:
 
 def get_text():
     #input_text = st.text_input('You: ','Hello, How are you?', key='input')
-    input_text = st.text_input('','Show all doctors schedule', placeholder=intro_message)
+    input_text = st.text_input('','Show all doctors schedule', placeholder=intro_message, key='input')
     return input_text
 
 if b1:
