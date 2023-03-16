@@ -56,7 +56,8 @@ for item in schedule_data:
 
 ########################################
 if st.button('Doctor list'):
-  print(names)
+  output = names
+  user_input = 'Get doctors list'
 
 if 'generated' not in st.session_state:
     st.session_state['generated'] = []
@@ -75,7 +76,10 @@ if user_input == "Show doctors schedule":
   output = sch_info+f'\nWho do you want to see?'
   st.session_state.past.append(user_input)
   st.session_state.generated.append(output)
-elif user_input+' in thai':
+elif user_input == 'Get doctors list':
+  st.session_state.past.append(user_input)
+  st.session_state.generated.append(output)
+elif user_input:
     output = generate_response(user_input)
     st.session_state.past.append(user_input)
     st.session_state.generated.append(output)
