@@ -2,6 +2,7 @@ import openai
 import streamlit as st
 from streamlit_chat import message
 import json
+import pandas as pd
 
 openai.api_key = st.secrets["pass"]
 
@@ -30,6 +31,9 @@ intro_message = "Please type a message here"
 ########################################
 with open('data.json', 'r') as f:
   schedule_data = json.load(f)
+
+df = pd.json_normalize(schedule_data)
+df_doc = df['']
 
 print(schedule_data)
 
@@ -90,7 +94,8 @@ if user_input:
   if user_input_lower == 'get doctors list':
     output = names
   elif user_input_lower == 'get all doctors schedule':
-    output = sch_info+f'\nWho do you want to see?'
+    #output = sch_info+f'\nWho do you want to see?'
+    output = st.write(df_doc)
   else:
     output = generate_response(user_input_lower)
 
