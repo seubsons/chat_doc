@@ -33,7 +33,10 @@ with open('data.json', 'r') as f:
   schedule_data = json.load(f)
 
 df = pd.json_normalize(schedule_data)
-df_doc = df['']
+df['Department'] = ['Radiology', 'Physical', 'General']
+df = df.rename(columns={'doctor': 'Name', 'date':'Date', 'availability':'Time'})
+#df_doc = df[['Name', 'Department']]
+df_doc = df
 
 print(schedule_data)
 
