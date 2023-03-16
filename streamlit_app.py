@@ -55,8 +55,11 @@ for item in schedule_data:
   names += f'{name}\n'
 
 ########################################
-b1 = st.button('All Doctors Schedule')
-b2 = st.button('Doctors list')
+col1, col2, col3 = st.columns([1,1,1])
+with col1:
+  b1 = st.button('All Doctors Schedule')
+with col2:
+  b2 = st.button('Doctors list')
 
 
 if 'generated' not in st.session_state:
