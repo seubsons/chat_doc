@@ -55,7 +55,8 @@ for item in schedule_data:
   names += f'{name}\n'
 
 ########################################
-load = st.button('Doctor list')
+b1 = st.button('All Doctors Schedule')
+b2 = st.button('Doctors list')
 
 
 if 'generated' not in st.session_state:
@@ -69,7 +70,9 @@ def get_text():
     input_text = st.text_input('','Show all doctors schedule', placeholder=intro_message)
     return input_text
 
-if load:
+if b1:
+  user_input = 'Show all doctors schedule'
+elif b2:
   user_input = 'Get doctors list'
 else:
   user_input = get_text()
