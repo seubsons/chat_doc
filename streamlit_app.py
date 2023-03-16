@@ -61,7 +61,7 @@ if 'load_state' not in st.session_state:
 
 if load or st.session_state.load_state:
   st.session_state.load_state = True
-  user_input = 'Get doctors list':
+  user_input = 'Get doctors list'
 
 if 'generated' not in st.session_state:
     st.session_state['generated'] = []
