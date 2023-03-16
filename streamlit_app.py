@@ -42,7 +42,7 @@ slen = 8
 # header = line1+line2+line3
 
 sch_info = f'\n'
-names = f'\n'
+names = f''
 for item in schedule_data:
   name = item['doctor']
   # department = 'General'
