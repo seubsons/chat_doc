@@ -41,11 +41,11 @@ slen = 8
 
 sch_info = f'\n'
 for item in schedule_data:
-  # name = item['doctor']
+  name = item['doctor']
   # department = 'General'
   # location = 'Main Office'
-  # date = item['date']
-  # time = item['availability']
+  date = item['date']
+  time = item['availability']
   #print(item)
   #sch_info += f'{item}\n'
   sch_info += f'{name.ljust(slen)}\t{date.ljust(slen)}\t{time}\n'
