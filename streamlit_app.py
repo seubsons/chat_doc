@@ -21,7 +21,7 @@ def generate_response(prompt):
 
 st.title('Welcome to Doctor Appointment Center')
 
-intro_message = "Hi there! I'm here to help you schedule an appointment with one of our doctors. What type of appointment would you like to schedule?"
+intro_message = "How Can I Help You?"
 
 if 'generated' not in st.session_state:
     st.session_state['generated'] = []
