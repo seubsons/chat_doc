@@ -46,7 +46,7 @@ for item in schedule_data:
   # location = 'Main Office'
   # date = item['date']
   # time = item['availability']
-  sch_info = += f'{item}\n"
+  sch_info = += f'{item}\n'
   # sch_info += f'{name.ljust(slen)}\t{department.ljust(slen)}\t{location.ljust(slen)}\t{date.ljust(slen)}\t{time}\n'
 
 ########################################
