@@ -55,10 +55,13 @@ for item in schedule_data:
   names += f'{name}'
 
 ########################################
-if st.button('Doctor list'):
-  output = names
-  user_input = 'Get doctors list'
-  print(user_input)
+load = st.button('Doctor list'):
+if 'load_state' not in st.session_state:
+  st.session_state.load_state = False
+
+if load or st.session_state.load_state:
+  st.session_state.load_state = True
+  user_input = 'Get doctors list':
 
 if 'generated' not in st.session_state:
     st.session_state['generated'] = []
@@ -78,6 +81,7 @@ if user_input == 'Show doctors schedule':
   st.session_state.past.append(user_input)
   st.session_state.generated.append(output)
 elif user_input == 'Get doctors list':
+  output = names
   st.session_state.past.append(user_input)
   st.session_state.generated.append(output)
 elif user_input:
