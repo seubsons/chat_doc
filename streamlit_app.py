@@ -52,7 +52,7 @@ for item in schedule_data:
   #print(item)
   #sch_info += f'{item}\n'
   sch_info += f'{name.ljust(slen)}\t{date.ljust(slen)}\t{time}\n'
-  names += f'{name}'
+  names += f'{name\n}'
 
 ########################################
 load = st.button('Doctor list')
