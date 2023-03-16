@@ -55,7 +55,7 @@ for item in schedule_data:
   names += f'{name}'
 
 ########################################
-load = st.button('Doctor list'):
+load = st.button('Doctor list')
 if 'load_state' not in st.session_state:
   st.session_state.load_state = False
 
