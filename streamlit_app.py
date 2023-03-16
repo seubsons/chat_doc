@@ -35,8 +35,7 @@ with open('data.json', 'r') as f:
 df = pd.json_normalize(schedule_data)
 df['Department'] = ['Radiology', 'Physical', 'General']
 df = df.rename(columns={'doctor': 'Name', 'date':'Date', 'availability':'Time'})
-#df_doc = df[['Name', 'Department']]
-df_doc = df
+df_name = df[['Name', 'Department']]
 
 print(schedule_data)
 
@@ -95,10 +94,10 @@ elif b2:
 if user_input:
   user_input_lower = user_input.lower()
   if user_input_lower == 'get doctors list':
-    output = names
+    output = st.write(df_name)
   elif user_input_lower == 'get all doctors schedule':
     #output = sch_info+f'\nWho do you want to see?'
-    output = st.write(df_doc)
+    output = st.write(df)
   else:
     output = generate_response(user_input_lower)
 
