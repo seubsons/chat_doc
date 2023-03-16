@@ -1,0 +1,1 @@
+[{"doctor": "Dr. Smith", "date": "March 22nd", "availability": ["9am", "11am", "2pm", "4pm"]}, {"doctor": "Dr. Patel", "date": "March 23rd", "availability": ["10am", "12pm", "3pm"]}, {"doctor": "Dr. Lee", "date": "March 24th", "availability": ["8am", "11am", "1pm", "4pm"]}]

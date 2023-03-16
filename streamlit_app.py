@@ -24,6 +24,29 @@ st.title('Welcome to Doctor Appointment Center')
 
 intro_message = "How Can I Help You?"
 
+########################################
+with open('data.json', 'r') as f:
+  schedule_data = json.load(f)
+
+line1 = f"Doctors Availability:\n\n"
+slen = 8
+space1 = " "*5
+space2 = " "*10
+line2 = f"Name{space2}Department{space2}Location{space2}Date{space2}Time\n"
+line3 = f"\n"
+header = line1+line2+line3
+
+sch_info = header
+for item in schedule_data:
+  name = item['doctor']
+  department = 'General'
+  location = 'Main Office'
+  date = item['date']
+  time = item['availability']
+  sch_info += f'{name.ljust(slen)}\t{department.ljust(slen)}\t{location.ljust(slen)}\t{date.ljust(slen)}\t{time}\n'
+
+########################################
+
 if 'generated' not in st.session_state:
     st.session_state['generated'] = []
 
@@ -38,7 +61,7 @@ def get_text():
 user_input = get_text()
 
 if user_input == "show doctors schedule":
-  output = 'Here it is!'
+  output = sch_info
   st.session_state.past.append(user_input)
   st.session_state.generated.append(output)
 else:
