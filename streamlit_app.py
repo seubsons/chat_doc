@@ -9,7 +9,7 @@ def generate_response(prompt):
     
     response = openai.Completion.create(
         engine="text-davinci-003",
-        engine="ada",
+        #engine="ada",
         prompt=prompt,
         max_tokens=100,
         n=1,
