@@ -56,12 +56,7 @@ for item in schedule_data:
 
 ########################################
 load = st.button('Doctor list')
-if 'load_state' not in st.session_state:
-  st.session_state.load_state = False
 
-if load or st.session_state.load_state:
-  st.session_state.load_state = True
-  user_input = 'Get doctors list'
 
 if 'generated' not in st.session_state:
     st.session_state['generated'] = []
@@ -74,16 +69,19 @@ def get_text():
     input_text = st.text_input('','Show doctors schedule', placeholder=intro_message)
     return input_text
 
-user_input = get_text()
+if load:
+  user_input = 'Get doctors list'
+else:
+  user_input = get_text()
 
 if user_input == 'Show doctors schedule':
   output = sch_info+f'\nWho do you want to see?'
   st.session_state.past.append(user_input)
   st.session_state.generated.append(output)
 elif user_input == 'Get doctors list':
-  output = names
-  st.session_state.past.append(user_input)
-  st.session_state.generated.append(output)
+    output = names
+    st.session_state.past.append(user_input)
+    st.session_state.generated.append(output)
 elif user_input:
     output = generate_response(user_input)
     st.session_state.past.append(user_input)
