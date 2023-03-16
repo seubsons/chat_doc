@@ -67,7 +67,7 @@ if user_input == "show doctors schedule":
   output = sch_info
   st.session_state.past.append(user_input)
   st.session_state.generated.append(output)
-elif: user_input == ""
+elif user_input == " ":
   pass
 else:
     output = generate_response(user_input)
