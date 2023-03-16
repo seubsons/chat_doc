@@ -60,14 +60,14 @@ if 'past' not in st.session_state:
 
 def get_text():
     #input_text = st.text_input('You: ','Hello, How are you?', key='input')
-    input_text = st.text_input('',placeholder=intro_message)
+    input_text = st.text_input('','Show doctors schedule', placeholder=intro_message)
     return input_text
 
 user_input = get_text()
 
-if user_input == "show doctors schedule":
+if user_input == "Show doctors schedule":
   output = sch_info
-  st.session_state.past.append(user_input)
+  #st.session_state.past.append(user_input)
   st.session_state.generated.append(output)
 elif user_input:
     output = generate_response(user_input)
