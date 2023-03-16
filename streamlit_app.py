@@ -23,7 +23,7 @@ def generate_response(prompt):
 
 st.title('Welcome to Doctor Appointment Center')
 
-intro_message = "How Can I Help You?"
+intro_message = "Which doctor do you want to see?"
 
 ########################################
 with open('data.json', 'r') as f:
