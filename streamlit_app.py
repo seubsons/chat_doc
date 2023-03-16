@@ -8,13 +8,13 @@ openai.api_key = st.secrets["pass"]
 def generate_response(prompt):
     
     response = openai.Completion.create(
-        #engine="text-davinci-003",
+        engine="text-davinci-003",
         engine="ada",
         prompt=prompt,
         max_tokens=100,
         n=1,
         stop=None,
-        temperature=0.0
+        temperature=0.5
     )
     
     message = response.choices[0].text
