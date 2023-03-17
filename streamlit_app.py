@@ -36,6 +36,7 @@ df = pd.json_normalize(schedule_data)
 df['Department'] = ['Radiology', 'Physical', 'General']
 df = df.rename(columns={'doctor': 'Name', 'date':'Date', 'availability':'Time'})
 df_name = df[['Name', 'Department']]
+df_date = df[['Name', 'Date']]
 
 print(schedule_data)
 
@@ -66,6 +67,8 @@ with col1:
   b1 = st.button('All Doctors Schedule')
 with col2:
   b2 = st.button('Doctors list')
+with col3:
+  b3 = st.button('Sort by Date')
 
 
 if 'generated' not in st.session_state:
@@ -86,6 +89,8 @@ if b1:
   user_input = 'Get all doctors schedule'
 elif b2:
   user_input = 'Get doctors list'
+elif b3:
+  user_input = 'Sort by date'
 # else:
 #   user_input = get_text()
 
@@ -98,6 +103,8 @@ if user_input:
   elif user_input_lower == 'get all doctors schedule':
     #output = sch_info+f'\nWho do you want to see?'
     output = st.write(df)
+  elif user_input_lower == 'sort by date':
+    output = st.write(df_date)
   else:
     output = generate_response(user_input_lower)
 
